@@ -12,8 +12,8 @@ Antidebug protection was harder to break, ScyllaHide wasn't working for me. But,
 
 Still, the code is obfuscated and virtualized. Add here is my inability to understand assembler at all (skill issue) and... was there any sense to do this at all? You'll say no, but...
 
-Seems like memory contents wasn't encrypted, so I found two strings (and some other magic). One was decryptable with base64 (let it be "A"), other not ("B), but they were similar, i.e. starting and ending with same magic.  
-Then, with help of @artdell, I managed to find a pattern, which converted base64-decoded string A into a B, which was a valid serial string.  
+Seems like memory contents wasn't encrypted, so I found two strings (and some other magic). One was decryptable with base64 (let it be "A"), other not ("B"), but they were similar, i.e. starting and ending with same magic.  
+Then, with help of @artdeell, I managed to find a pattern, which converted base64-decoded string A into a B, which was a valid serial string.  
 <sub>There was also a prefix "[RP-SERIAL]" concatenated to a serial in the start, was the server checking it or no - no one know...  </sub>  
 I don't think this pattern is 100% indentical to dll's variant - I still don't know anything about magic strings in the end of a line. But...
 I pasted a line into my client stub and... managed to the join server! From my Linux PC, yes.
